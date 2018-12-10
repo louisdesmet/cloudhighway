@@ -14,4 +14,14 @@ class Product extends Model
     {
         return $this->belongsToMany('App\Language');
     }
+    
+    /*-public function prices()
+    {
+        return $this->belongsToMany('App\Price');
+    }*/
+    
+    public function prices()
+    {
+        return $this->hasMany('App\Price');
+    }
 }

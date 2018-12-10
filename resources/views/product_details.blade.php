@@ -24,7 +24,14 @@
         <div>{!! $product->description !!}</div>  
         <div class="form-group mt-5">
             {{ Form::label('language', "Language") }}
-            {!! Form::select('language', $product->languages->pluck('name', 'id'), null, ['class' => 'form-control']) !!}
+            {!! Form::select('language', $product->languages->pluck('name', 'id'), null, ['class' => 'form-control']) !!}     
+            @foreach($product->prices as $productPrice)
+                if($productPrice == Auth::user()->league) {
+                
+                }
+            @endforeach
+            
+            {{ [0]->price }}
         </div>
     </div>
     <div class="right">
